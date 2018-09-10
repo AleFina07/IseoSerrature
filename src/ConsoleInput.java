@@ -55,4 +55,5 @@ public class ConsoleInput implements Serializable
 	{
 		return (LocalDateTime.parse(reader.readLine()));
 	}
+	
 }

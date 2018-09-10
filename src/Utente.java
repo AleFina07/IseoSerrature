@@ -1,22 +1,27 @@
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Utente 
+public class Utente implements Serializable
 {
+	private int codice;
 	private String nome;
 	private String cognome;
 	private String cdc;
 	private String azienda;
 	private int numTel;
 	private String dispositivo;
-	private boolean tipoDispositivo;
-	private boolean opzEstero;
+	private String tipoDispositivo;
+	private String opzEstero;
 	private String opzContratto;
 	private LocalDateTime dataAssegnazione;
-	private boolean statoSim;
+	private int anno;
+	private int mese;
+	private int giorno;
+	private String statoSim;
 	
-	public Utente(String nome, String cognome, String cdc, String azienda, int numTel, String dispositivo, boolean tipoDispositivo, boolean opzEstero, String opzContratto, LocalDateTime dataAssegnazione, boolean statoSim)
+	public Utente(String nome, String cognome, String cdc, String azienda, int numTel, String dispositivo, String tipoDispositivo2, String opzEstero2, String opzContratto, LocalDateTime dataAssegnazione, String statoSim2)
 	{
+		setCodice(codice);
 		setNome(nome);
 		setCognome(cognome);
 		setCdc(cdc);							//CENTRO COSTO
@@ -47,6 +52,11 @@ public class Utente
 		
 	}
 	
+	public Utente(int codice) 
+	{
+		
+	}
+
 	public String getNome() 
 	{
 		return nome;
@@ -106,15 +116,9 @@ public class Utente
 		this.dispositivo = dispositivo;
 	}
 	
-	public Boolean getTipoDispositivo() 
-	{
-		return tipoDispositivo;
-	}
 	
-	public void setTipoDispositivo(Boolean tipoDispositivo) 
-	{
-		this.tipoDispositivo = tipoDispositivo;
-	}
+	
+	
 	
 	public String getOpzContratto() 
 	{
@@ -126,15 +130,7 @@ public class Utente
 		this.opzContratto = opzContratto;
 	}
 	
-	public Boolean getOpzEstero() 
-	{
-		return opzEstero;
-	}
 	
-	public void setOpzEstero(Boolean opzEstero) 
-	{
-		this.opzEstero = opzEstero;
-	}
 	
 	public LocalDateTime getDataAssegnazione() 
 	{
@@ -146,21 +142,67 @@ public class Utente
 		this.dataAssegnazione = dataAssegnazione;
 	}
 	
-	public Boolean getStatoSim()
-	{
-		return statoSim;
-	}
 	
-	public void setStatoSim(Boolean statoSim) 
-	{
-		this.statoSim = statoSim;
+
+	public int getAnno() {
+		return anno;
 	}
-	
+
+	public void setAnno(int anno) {
+		this.anno = anno;
+	}
+
+	public int getMese() {
+		return mese;
+	}
+
+	public void setMese(int mese) {
+		this.mese = mese;
+	}
+
+	public int getGiorno() {
+		return giorno;
+	}
+
+	public void setGiorno(int giorno) {
+		this.giorno = giorno;
+	}
+
+	public int getCodice() {
+		return codice;
+	}
+
+	public void setCodice(int codice) {
+		this.codice = codice;
+	}
 	
 	public String toString()
 	{
 		return (getNome()+" "+ getCognome()+" "+getCdc()+" "+getAzienda()+ " "+getNumTel()+" "+getTipoDispositivo()+" "+getOpzContratto()+" "+getDataAssegnazione()+" "+getStatoSim());
 	}
-	
+
+	public String getTipoDispositivo() {
+		return tipoDispositivo;
+	}
+
+	public void setTipoDispositivo(String tipoDispositivo) {
+		this.tipoDispositivo = tipoDispositivo;
+	}
+
+	public String getOpzEstero() {
+		return opzEstero;
+	}
+
+	public void setOpzEstero(String opzEstero) {
+		this.opzEstero = opzEstero;
+	}
+
+	public String getStatoSim() {
+		return statoSim;
+	}
+
+	public void setStatoSim(String statoSim) {
+		this.statoSim = statoSim;
+	}
 	
 }
