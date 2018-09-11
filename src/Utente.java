@@ -19,7 +19,7 @@ public class Utente implements Serializable
 	private int giorno;
 	private String statoSim;
 	
-	public Utente(String nome, String cognome, String cdc, String azienda, long numTel, String dispositivo, String tipoDispositivo2, String opzEstero2, String opzContratto, LocalDateTime dataAssegnazione, String statoSim2)
+	public Utente(String nome, String cognome, String cdc, String azienda, long numTel, String dispositivo, String tipoDispositivo, String opzEstero, String opzContratto, LocalDateTime dataAssegnazione, String statoSim)
 	{
 		setCodice(codice);
 		setNome(nome);
@@ -159,7 +159,7 @@ public class Utente implements Serializable
 	
 	public String toString()
 	{
-		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Dispositivo -------->"+ getDispositivo()+  '\n' +"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getDataAssegnazione()+'\n'+"Stato SIM ----------> "+getStatoSim());
+		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Dispositivo --------> "+ getDispositivo()+  '\n' +"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getDataAssegnazione()+'\n'+"Stato SIM ----------> "+getStatoSim());
 	}
 
 	public String getTipoDispositivo() {

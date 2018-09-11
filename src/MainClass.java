@@ -83,7 +83,7 @@ public class MainClass implements Serializable
 				String opzContratto= null;
 				LocalDateTime dataAssegnazione = null;
 				//---------------------------------
-				String statoSim= null;
+				String statoSim = null;
 				//----------------------------------
 				int anno=0, mese=0, giorno=0;
 				//----------------------------------
