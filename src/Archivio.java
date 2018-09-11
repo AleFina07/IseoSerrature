@@ -42,7 +42,7 @@
 		
 		//Restituisce il partecipante con il codice specificato.
 		//Se il partecipante non è presente nell'elenco viene sollevata una eccezione del tipo EccezionePartecipanteNonPresente
-		public Utente getUtente(int numeroCercato) throws EccezioneUtenteNonPresente
+		public Utente getUtente(long numeroCercato) throws EccezioneUtenteNonPresente
 		{
 			Utente u=null;
 			for (int i = 0; i < NUM_MAX_UTENTI; i++) 
@@ -63,7 +63,7 @@
 		
 		//Elimina il partecipante con il codice specificato.
 		//Se il partecipante non è presente nell'elenco viene sollevata una eccezione del tipo EccezionePartecipanteNonPresente
-		public void eliminaUtente(int numeroCercato) throws EccezioneUtenteNonPresente
+		public void eliminaUtente(long numeroCercato) throws EccezioneUtenteNonPresente
 		{
 			Utente u=null;
 			for (int i = 0; i < NUM_MAX_UTENTI; i++) 
@@ -225,7 +225,7 @@
 			} 
 			catch (ClassNotFoundException e) 
 			{
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			

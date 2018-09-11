@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.math.BigInteger;
 
 
 public class MainClass implements Serializable
@@ -30,15 +31,22 @@ public class MainClass implements Serializable
 		//creo le voci del menu
 		String[] elencoVociMenu1= {
 				"0---> Esci",
+				"------------------------------------------------------",
 				"1---> Aggiungi un utente",
+				"------------------------------------------------------",
 				"2---> Visualizza dati di un utente cercando il numero",
+				"------------------------------------------------------",
 				"3---> Elimina un utente",
+				"------------------------------------------------------",
 				"4---> Visualizza utenti di una specifica azienda",
+				"------------------------------------------------------",
 				"5---> Visualizza utenti in ordine alfabetico",
-				"6---> Stampa su file di testo l'elenco degli utenti in ordine alfabetico", };
+				"------------------------------------------------------",
+				"6---> Stampa su file di testo l'elenco degli utenti in ordine alfabetico", 
+				"------------------------------------------------------",};
 		
 		//creo il menu
-		Menu menu1=new Menu("MENU SOFTWARE ISEO SERRSTURE S.P.A.     @AlessandroFinazzi", elencoVociMenu1);
+		Menu menu1=new Menu("MENU SOFTWARE ISEO SERRSTURE S.P.A.     @Applicazione di AlessandroFinazzi", elencoVociMenu1);
 		ConsoleInput tastiera=new ConsoleInput();
 		//invoco il metodo che consente all'utente di scegliere una voce del menu
 		int scelta=1;
@@ -65,12 +73,10 @@ public class MainClass implements Serializable
 				//---------------------------------
 				String azienda= null;
 				//---------------------------------
-				int numTel = 0;
+				long numTel = 0;
 				//---------------------------------
 				String dispositivo= null;
 				String tipoDispositivo = null;
-				//---------------------------------
-				boolean ok;
 				//---------------------------------
 				String opzEstero= null;
 				//---------------------------------
@@ -95,57 +101,13 @@ public class MainClass implements Serializable
 					System.out.println("Inserisci il nome dell'azienda");
 					azienda=tastiera.ReadString();
 					System.out.println("Inserisci il numero di telefono");
-					numTel=tastiera.ReadInt();
-					System.out.println("Inserire la marca del dispositivo(es. iPhone,iPad,Samsung, ecc...)");
+					numTel=tastiera.ReadLong();
+					System.out.println("Inserire la marca del disositivo(es. iPhone, iPad, Samsung, ecc...)");
 					dispositivo=tastiera.ReadString();
 					System.out.println("Inserire la tipologia di dispositivo: aziendale o promiscuo");
 					tipoDispositivo=tastiera.ReadString();
-					/*String promiscuo = "promiscuo";
-					String aziendale = "aziendale";
-	
-					
-					
-						if (inserimento== "aziendale") 
-						{
-							tipoDispositivo= inserimento;
-							ok=true;
-						}
-						else if(inserimento== "promiscuo")
-						{
-							tipoDispositivo = inserimento;
-							ok=true;
-						}
-						else
-						{
-							System.out.println("Inserimento non corretto, riprovare ");
-							ok=false;
-						}
-	
-					} while (ok=true);
-					
-					*/
 					System.out.println("Inserisci se è attiva l'opzione estero: si o no");
 					opzEstero=tastiera.ReadString();
-					
-					/*	
-						if (opz== "si") 
-						{
-							opzEstero= "promiscuo";
-							ok=true;
-						}
-						else if(opz== "no")
-						{
-							opzEstero = "no";
-							ok=true;
-						}
-						else
-						{
-							System.out.println("Inserimento non corretto, riprovare ");
-							ok=false;
-						}
-	
-					} while (ok=true);
-					*/
 					System.out.println("Inserisci l'opzione del contratto(massimo 100 caratteri)");
 					opzContratto=tastiera.ReadString();
 					//Data del contatto
@@ -157,32 +119,9 @@ public class MainClass implements Serializable
 					System.out.print("Giorno(numero): ");
 					giorno=tastiera.ReadInt();
 					dataAssegnazione=LocalDateTime.now();
-					
 					System.out.println("Inserisci lo stato della SIM: Attiva o chiusa");
 					statoSim=tastiera.ReadString();
 				}	
-					/*stato=tastiera.ReadString();
-					
-						
-						if (stato== "attiva") 
-						{
-							statoSim= "attiva";
-							ok=true;
-						}
-						else if(stato== "chiusa")
-						{
-							tipoDispositivo = "chiusa";
-							ok=true;
-						}
-						else
-						{
-							System.out.println("Inserimento non corretto, riprovare ");
-							ok=false;
-						}
-	
-					} while (ok=false);
-					
-					*/
 					
 				catch (NumberFormatException e) 
 				{
@@ -199,6 +138,7 @@ public class MainClass implements Serializable
 					Utente u=new Utente(nome, cognome, cdc,azienda,numTel, dispositivo, tipoDispositivo, opzEstero, opzContratto,dataAssegnazione, statoSim);
 					a1.aggiungiUtente(u);
 					a1.salvaArchivio(nomeFileBinario);  //Serializzazione
+					System.out.println("Serializzazione avvenuta con successo");
 				} 
 				catch (EccezionePostiEsauriti e) 
 				{
@@ -212,10 +152,10 @@ public class MainClass implements Serializable
 			//-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 			case 2: //Visualizzazione di un utente
 				System.out.println("Inserisci il numero di telefono dell'utente da cercare all'interno dell' archivio");
-				int numeroCercato = 0;
+				long numeroCercato = 0;
 				try
 				{
-					numeroCercato=tastiera.ReadInt();
+					numeroCercato=tastiera.ReadLong();
 				} 
 				catch (NumberFormatException e) 
 				{
@@ -262,7 +202,7 @@ public class MainClass implements Serializable
 				try 
 				{
 					a1.eliminaUtente(numeroCercato);
-					System.out.println("Partecipante con codice "+numeroCercato+ " eliminato con successo");
+					System.out.println("Partecipante con numero "+numeroCercato+ " eliminato con successo");
 					a1.salvaArchivio(nomeFileBinario);
 				} 
 				catch (EccezioneUtenteNonPresente e) 
@@ -307,7 +247,8 @@ public class MainClass implements Serializable
 				elenco=a1.ordineAlfabetico();
 				for (int i = 0; i < elenco.length; i++) 
 				{
-					System.out.println("-----------"+i+"------------");
+					System.out.println("**********"+"Utente n. "+(i+1)+"**********");
+					
 					System.out.println(elenco[i].toString()+'\n');
 					
 				}
@@ -315,6 +256,7 @@ public class MainClass implements Serializable
 				{
 					System.out.println("Nessun utente presente nell'archivio");
 				}
+				
 				System.out.println();
 				break;
 				

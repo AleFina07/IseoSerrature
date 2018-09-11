@@ -8,7 +8,7 @@ public class Utente implements Serializable
 	private String cognome;
 	private String cdc;
 	private String azienda;
-	private int numTel;
+	private long numTel;
 	private String dispositivo;
 	private String tipoDispositivo;
 	private String opzEstero;
@@ -19,7 +19,7 @@ public class Utente implements Serializable
 	private int giorno;
 	private String statoSim;
 	
-	public Utente(String nome, String cognome, String cdc, String azienda, int numTel, String dispositivo, String tipoDispositivo2, String opzEstero2, String opzContratto, LocalDateTime dataAssegnazione, String statoSim2)
+	public Utente(String nome, String cognome, String cdc, String azienda, long numTel, String dispositivo, String tipoDispositivo2, String opzEstero2, String opzContratto, LocalDateTime dataAssegnazione, String statoSim2)
 	{
 		setCodice(codice);
 		setNome(nome);
@@ -31,7 +31,6 @@ public class Utente implements Serializable
 		setTipoDispositivo(tipoDispositivo);	//AZIENDALE\PROMISCUO
 		setOpzEstero(opzEstero);				//SI\NO
 		setOpzContratto(opzContratto);				
-		setDataAssegnazione(dataAssegnazione);
 		setStatoSim(statoSim);					//ATTIVA\CHIUSA
 		
 	}
@@ -47,7 +46,6 @@ public class Utente implements Serializable
 		setTipoDispositivo(u.getTipoDispositivo());
 		setOpzEstero(u.getOpzEstero());
 		setOpzContratto(u.getOpzContratto());
-		setDataAssegnazione(u.getDataAssegnazione());
 		setStatoSim(u.getStatoSim());
 		
 	}
@@ -96,12 +94,12 @@ public class Utente implements Serializable
 		this.azienda = azienda;
 	}
 	
-	public int getNumTel() 
+	public long getNumTel() 
 	{
 		return numTel;
 	}
 	
-	public void setNumTel(int numTel) 
+	public void setNumTel(long numTel) 
 	{
 		this.numTel = numTel;
 	}
@@ -116,10 +114,6 @@ public class Utente implements Serializable
 		this.dispositivo = dispositivo;
 	}
 	
-	
-	
-	
-	
 	public String getOpzContratto() 
 	{
 		return opzContratto;
@@ -129,20 +123,6 @@ public class Utente implements Serializable
 	{
 		this.opzContratto = opzContratto;
 	}
-	
-	
-	
-	public LocalDateTime getDataAssegnazione() 
-	{
-		return dataAssegnazione;
-	}
-	
-	public void setDataAssegnazione(LocalDateTime dataAssegnazione) 
-	{
-		this.dataAssegnazione = dataAssegnazione;
-	}
-	
-	
 
 	public int getAnno() {
 		return anno;
@@ -168,6 +148,7 @@ public class Utente implements Serializable
 		this.giorno = giorno;
 	}
 
+
 	public int getCodice() {
 		return codice;
 	}
@@ -178,7 +159,7 @@ public class Utente implements Serializable
 	
 	public String toString()
 	{
-		return (getNome()+" "+ getCognome()+" "+getCdc()+" "+getAzienda()+ " "+getNumTel()+" "+getTipoDispositivo()+" "+getOpzContratto()+" "+getDataAssegnazione()+" "+getStatoSim());
+		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getDataAssegnazione()+'\n'+"Stato SIM ----------> "+getStatoSim());
 	}
 
 	public String getTipoDispositivo() {
@@ -203,6 +184,14 @@ public class Utente implements Serializable
 
 	public void setStatoSim(String statoSim) {
 		this.statoSim = statoSim;
+	}
+
+	public LocalDateTime getDataAssegnazione() {
+		return dataAssegnazione;
+	}
+
+	public void setDataAssegnazione(LocalDateTime dataAssegnazione) {
+		this.dataAssegnazione = dataAssegnazione;
 	}
 	
 }
