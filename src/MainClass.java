@@ -118,7 +118,7 @@ public class MainClass implements Serializable
 					mese=tastiera.ReadInt();
 					System.out.print("Giorno(numero): ");
 					giorno=tastiera.ReadInt();
-					dataAssegnazione=LocalDateTime.now();
+					dataAssegnazione=LocalDateTime(anno, mese, giorno);
 					System.out.println("Inserisci lo stato della SIM: Attiva o chiusa");
 					statoSim=tastiera.ReadString();
 				}	
@@ -277,5 +277,10 @@ public class MainClass implements Serializable
 				break;
 			}
 		}	
+	}
+
+	private static LocalDateTime LocalDateTime(int anno, int mese, int giorno) {
+		// TODO Auto-generated method stub
+		return null;
 	}	
 }
