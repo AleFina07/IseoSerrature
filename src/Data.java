@@ -37,8 +37,8 @@ public class Data implements Serializable
 	//EccezioneDatiNonValidi
 	public void setAnno(int anno) throws EccezioneDatiNonValidi
 	{
-		if (anno<2000 || anno >5000)
-			throw new EccezioneDatiNonValidi("Anno non valide");
+		if (anno<0 || anno >5000)
+			throw new EccezioneDatiNonValidi("Anno non valido");
 		else
 			this.anno = anno;
 	}

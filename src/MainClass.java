@@ -102,8 +102,39 @@ public class MainClass implements Serializable
 					numTel=tastiera.ReadLong();
 					System.out.println("Inserire la marca del disositivo(es. iPhone, iPad, Samsung, ecc...)");
 					dispositivo=tastiera.ReadString();
+					
 					System.out.println("Inserire la tipologia di dispositivo: aziendale o promiscuo");
 					tipoDispositivo=tastiera.ReadString();
+					/*switch (select1) 
+					{
+					case 1:
+						tipoDispositivo= "Aziendale";
+						
+						break;
+					
+					case 2:
+						tipoDispositivo= "Promiscuo";
+					default:
+						System.out.println("Numero inserito non corretto.....REINSERIRE");
+						break;
+					}
+					
+					//tipoDispositivo=tastiera.ReadString();
+					/*if (inserimento == "aziendale") 
+						{
+							tipoDispositivo= "aziendale";
+						}
+					else if(inserimento=="promiscuo")
+						{
+							tipoDispositivo=tastiera.ReadString();
+						}
+					else
+						{
+							System.out.println("SCELTA ERRATA.....REINSERIRE");
+						}
+					*/
+					
+						
 					System.out.println("Inserisci se è attiva l'opzione estero: si o no");
 					opzEstero=tastiera.ReadString();
 					System.out.println("Inserisci l'opzione del contratto(massimo 100 caratteri)");
