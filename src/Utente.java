@@ -13,13 +13,13 @@ public class Utente implements Serializable
 	private String tipoDispositivo;
 	private String opzEstero;
 	private String opzContratto;
-	private int dataAssegnazione;
+	private Data dataAssegnazione;
 	private int anno;
 	private int mese;
 	private int giorno;
 	private String statoSim;
 	
-	public Utente(String nome, String cognome, String cdc, String azienda, long numTel, String dispositivo, String tipoDispositivo, String opzEstero, String opzContratto, int anno, int mese, int giorno, String statoSim)
+	public Utente(String nome, String cognome, String cdc, String azienda, long numTel, String dispositivo, String tipoDispositivo, String opzEstero, String opzContratto,Data dataAssegnazione, String statoSim)
 	{
 		
 		setNome(nome);
@@ -31,9 +31,7 @@ public class Utente implements Serializable
 		setTipoDispositivo(tipoDispositivo);	//AZIENDALE\PROMISCUO
 		setOpzEstero(opzEstero);				//SI\NO
 		setOpzContratto(opzContratto);
-		setAnno(anno);
-		setMese(mese);
-		setGiorno(giorno);
+		setDataAssegnazione(dataAssegnazione);
 		setStatoSim(statoSim);					//ATTIVA\CHIUSA
 		
 	}
@@ -49,20 +47,41 @@ public class Utente implements Serializable
 		setTipoDispositivo(u.getTipoDispositivo());
 		setOpzEstero(u.getOpzEstero());
 		setOpzContratto(u.getOpzContratto());
+		setDataAssegnazione(u.getDataAssegnazione());
 		setStatoSim(u.getStatoSim());
 		
 	}
 	
-	public int dataAssegnazione(int anno, int mese, int giorno) 
+	public Utente(int i) 
 	{
-		return dataAssegnazione;
-		
-	}
-	public Utente(int codice) 
-	{
-		
+	
 	}
 
+	public Data getDataAssegnazione() 
+	{
+		Data dataAssegnazione= null;
+		try 
+		{
+			dataAssegnazione=new Data(this.dataAssegnazione);
+		} 
+		catch (EccezioneDatiNonValidi e) 
+		{
+			
+		}
+		return dataAssegnazione;
+	}
+	public void setDataAssegnazione(Data dataAssegnazione) 
+	{
+		try 
+		{
+			this.dataAssegnazione = new Data(dataAssegnazione);
+		} 
+		catch (EccezioneDatiNonValidi e) 
+		{
+			
+		}
+	}
+	
 	public String getNome() 
 	{
 		return nome;
@@ -155,19 +174,9 @@ public class Utente implements Serializable
 	public void setGiorno(int giorno) {
 		this.giorno = giorno;
 	}
-
-
-	public int getCodice() {
-		return codice;
-	}
-
-	public void setCodice(int codice) {
-		this.codice = codice;
-	}
-	
 	public String toString()
 	{
-		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Dispositivo --------> "+ getDispositivo()+  '\n' +"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getAnno()+"/"+ getMese()+"/"+getGiorno()+'\n'+"Stato SIM ----------> "+getStatoSim());
+		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Dispositivo --------> "+ getDispositivo()+  '\n' +"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getDataAssegnazione()+'\n'+"Stato SIM ----------> "+getStatoSim());
 	}
 
 	public String getTipoDispositivo() {

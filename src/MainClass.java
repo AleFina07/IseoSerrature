@@ -13,7 +13,7 @@ public class MainClass implements Serializable
 {
 	
 	
-	public static void main(String[] args) throws FileException, EccezioneFile
+	public static void main(String[] args) throws FileException, EccezioneFile, EccezioneDatiNonValidi
 	{
 
 		Archivio a1= new Archivio();
@@ -80,13 +80,12 @@ public class MainClass implements Serializable
 				String opzEstero= null;
 				//---------------------------------
 				String opzContratto= null;
-				LocalDateTime dataAssegnazione = null;
 				//---------------------------------
 				String statoSim = null;
 				//----------------------------------
 				int anno=0, mese=0, giorno=0;
 				//----------------------------------
-				
+				LocalDateTime dataAssegnazione = null;
 				//----------------------------------
 				try 
 				{
@@ -133,7 +132,7 @@ public class MainClass implements Serializable
 				
 				try 
 				{
-					Utente u=new Utente(nome, cognome, cdc,azienda,numTel, dispositivo, tipoDispositivo, opzEstero, opzContratto,anno, mese, giorno, statoSim);
+					Utente u=new Utente(nome, cognome, cdc,azienda,numTel, dispositivo, tipoDispositivo, opzEstero, opzContratto, new Data(anno, mese, giorno), statoSim);
 					a1.aggiungiUtente(u);
 					a1.salvaArchivio(nomeFileBinario);  //Serializzazione
 					System.out.println("Serializzazione avvenuta con successo");
