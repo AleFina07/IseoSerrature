@@ -63,7 +63,6 @@ public class MainClass implements Serializable
 				break;
 				//-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 			case 1: //Inserimento nuovo utente
-				int codice = 0;
 				//---------------------------------
 				String nome = null;
 				//---------------------------------
@@ -118,7 +117,6 @@ public class MainClass implements Serializable
 					mese=tastiera.ReadInt();
 					System.out.print("Giorno(numero): ");
 					giorno=tastiera.ReadInt();
-					dataAssegnazione=LocalDateTime(anno, mese, giorno);
 					System.out.println("Inserisci lo stato della SIM: Attiva o chiusa");
 					statoSim=tastiera.ReadString();
 				}	
@@ -135,7 +133,7 @@ public class MainClass implements Serializable
 				
 				try 
 				{
-					Utente u=new Utente(nome, cognome, cdc,azienda,numTel, dispositivo, tipoDispositivo, opzEstero, opzContratto,dataAssegnazione, statoSim);
+					Utente u=new Utente(nome, cognome, cdc,azienda,numTel, dispositivo, tipoDispositivo, opzEstero, opzContratto,anno, mese, giorno, statoSim);
 					a1.aggiungiUtente(u);
 					a1.salvaArchivio(nomeFileBinario);  //Serializzazione
 					System.out.println("Serializzazione avvenuta con successo");

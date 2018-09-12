@@ -3,7 +3,7 @@ import java.time.LocalDateTime;
 
 public class Utente implements Serializable
 {
-	private int codice;
+	
 	private String nome;
 	private String cognome;
 	private String cdc;
@@ -13,15 +13,15 @@ public class Utente implements Serializable
 	private String tipoDispositivo;
 	private String opzEstero;
 	private String opzContratto;
-	private LocalDateTime dataAssegnazione;
+	private int dataAssegnazione;
 	private int anno;
 	private int mese;
 	private int giorno;
 	private String statoSim;
 	
-	public Utente(String nome, String cognome, String cdc, String azienda, long numTel, String dispositivo, String tipoDispositivo, String opzEstero, String opzContratto, LocalDateTime dataAssegnazione, String statoSim)
+	public Utente(String nome, String cognome, String cdc, String azienda, long numTel, String dispositivo, String tipoDispositivo, String opzEstero, String opzContratto, int anno, int mese, int giorno, String statoSim)
 	{
-		setCodice(codice);
+		
 		setNome(nome);
 		setCognome(cognome);
 		setCdc(cdc);							//CENTRO COSTO
@@ -30,7 +30,10 @@ public class Utente implements Serializable
 		setDispositivo(dispositivo);			//esempio: iPhone,iPad, Samsung
 		setTipoDispositivo(tipoDispositivo);	//AZIENDALE\PROMISCUO
 		setOpzEstero(opzEstero);				//SI\NO
-		setOpzContratto(opzContratto);				
+		setOpzContratto(opzContratto);
+		setAnno(anno);
+		setMese(mese);
+		setGiorno(giorno);
 		setStatoSim(statoSim);					//ATTIVA\CHIUSA
 		
 	}
@@ -50,6 +53,11 @@ public class Utente implements Serializable
 		
 	}
 	
+	public int dataAssegnazione(int anno, int mese, int giorno) 
+	{
+		return dataAssegnazione;
+		
+	}
 	public Utente(int codice) 
 	{
 		
@@ -159,7 +167,7 @@ public class Utente implements Serializable
 	
 	public String toString()
 	{
-		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Dispositivo --------> "+ getDispositivo()+  '\n' +"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getDataAssegnazione()+'\n'+"Stato SIM ----------> "+getStatoSim());
+		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Dispositivo --------> "+ getDispositivo()+  '\n' +"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getAnno()+"/"+ getMese()+"/"+getGiorno()+'\n'+"Stato SIM ----------> "+getStatoSim());
 	}
 
 	public String getTipoDispositivo() {
@@ -186,12 +194,12 @@ public class Utente implements Serializable
 		this.statoSim = statoSim;
 	}
 
-	public LocalDateTime getDataAssegnazione() {
+	/*public LocalDateTime getDataAssegnazione() {
 		return dataAssegnazione;
 	}
 
 	public void setDataAssegnazione(LocalDateTime dataAssegnazione) {
 		this.dataAssegnazione = dataAssegnazione;
-	}
+	}*/
 	
 }
