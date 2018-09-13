@@ -9,6 +9,7 @@
 
 	public class Archivio implements Serializable
 	{
+		
 		//Attributi
 		private Utente[] elencoUtenti;
 		private final int NUM_MAX_CARATTERI_CONTRATTO=100;
@@ -186,7 +187,7 @@
 			elencoAlfabetico=ordineAlfabetico();
 			for (int i = 0; i < elencoAlfabetico.length; i++) 
 			{
-				stringaUtente=elencoAlfabetico[i].getNome()+" telefono: "+elencoAlfabetico[i].getNumTel();
+				stringaUtente=elencoAlfabetico[i].getNome()+elencoAlfabetico[i].getCognome()+'\n'+" Telefono:"+elencoAlfabetico[i].getNumTel();
 				fileUtenti.tofile(stringaUtente);
 			}
 			

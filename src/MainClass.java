@@ -15,7 +15,13 @@ public class MainClass implements Serializable
 	
 	public static void main(String[] args) throws FileException, EccezioneFile, EccezioneDatiNonValidi
 	{
-
+		/*
+		JFrame finestra= new JFrame("la mia prima bela finestra");
+		finestra.setBounds(500, 500, 600, 300);
+		
+		finestra.setVisible(true);
+		*/
+		
 		Archivio a1= new Archivio();
 		//Deserializzazione
 		String nomeFileBinario="Archivio.bin";
@@ -27,7 +33,7 @@ public class MainClass implements Serializable
 		{
 			System.out.println("Non è possibile caricare i dati dal file "+nomeFileBinario);
 		}
-		
+		System.out.flush();
 		//creo le voci del menu
 		String[] elencoVociMenu1= {
 				"0---> Esci",
@@ -102,37 +108,28 @@ public class MainClass implements Serializable
 					numTel=tastiera.ReadLong();
 					System.out.println("Inserire la marca del disositivo(es. iPhone, iPad, Samsung, ecc...)");
 					dispositivo=tastiera.ReadString();
-					
+					//String az= "aziendale";
+					//String pr= "promiscuo";
 					System.out.println("Inserire la tipologia di dispositivo: aziendale o promiscuo");
 					tipoDispositivo=tastiera.ReadString();
-					/*switch (select1) 
-					{
-					case 1:
-						tipoDispositivo= "Aziendale";
-						
-						break;
-					
-					case 2:
-						tipoDispositivo= "Promiscuo";
-					default:
-						System.out.println("Numero inserito non corretto.....REINSERIRE");
-						break;
-					}
-					
-					//tipoDispositivo=tastiera.ReadString();
-					/*if (inserimento == "aziendale") 
-						{
-							tipoDispositivo= "aziendale";
-						}
-					else if(inserimento=="promiscuo")
-						{
-							tipoDispositivo=tastiera.ReadString();
-						}
-					else
-						{
-							System.out.println("SCELTA ERRATA.....REINSERIRE");
-						}
+					/*	do {
+						if (tipoDispositivo == az) 
+							{
+								tipoDispositivo= az;
+								return;
+							}
+						else if(tipoDispositivo == pr)
+							{
+								tipoDispositivo = pr;
+								return;
+							}
+						else
+							{
+								System.out.println("SCELTA ERRATA.....REINSERIRE");
+							}
+					} while (tipoDispositivo != az || tipoDispositivo != pr);
 					*/
+					
 					
 						
 					System.out.println("Inserisci se è attiva l'opzione estero: si o no");
@@ -176,7 +173,10 @@ public class MainClass implements Serializable
 				{
 					System.out.println("Non è stato possibile salvare la modifica sul file "+nomeFileBinario);
 				}
+				System.out.println("PREMI QUALSIASI TASTO PER TORNARE AL MENU");
+				
 				break;
+				
 			//-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 			case 2: //Visualizzazione di un utente
 				System.out.println("Inserisci il numero di telefono dell'utente da cercare all'interno dell' archivio");
@@ -230,7 +230,7 @@ public class MainClass implements Serializable
 				try 
 				{
 					a1.eliminaUtente(numeroCercato);
-					System.out.println("Partecipante con numero "+numeroCercato+ " eliminato con successo");
+					System.out.println("Partecipante con numero di telefono "+numeroCercato+ " eliminato con successo");
 					a1.salvaArchivio(nomeFileBinario);
 				} 
 				catch (EccezioneUtenteNonPresente e) 
@@ -242,6 +242,7 @@ public class MainClass implements Serializable
 					System.out.println("Non è stato possibile salvare la modifica sul file "+nomeFileBinario);
 				}
 				
+				break;
 				
 				//////////////////////////////////////////////////////////////////////////////////////////////
 				
@@ -285,7 +286,7 @@ public class MainClass implements Serializable
 					System.out.println("Nessun utente presente nell'archivio");
 				}
 				
-				System.out.println();
+				
 				break;
 				
 			case 6: //Stampa su file
@@ -306,9 +307,4 @@ public class MainClass implements Serializable
 			}
 		}	
 	}
-
-	private static LocalDateTime LocalDateTime(int anno, int mese, int giorno) {
-		// TODO Auto-generated method stub
-		return null;
-	}	
 }
