@@ -1,0 +1,25 @@
+11	1	1	1	1	1	1	1:1:1	1
+AlessandroFinazzi	1234	iseo Serrature	3926481131	Samsung	aziendale	opzione	2018:9:9	Attiva
+AlessandroFinazzi	1234	Iseo Serrature	3351234569	IPhone	aziendale	piano 1	2018:9:9	attiva
+GaiaPerego	123c	Iseo France	3481234567	Samsung	promiscuo	opzione	2018:1:1	attiva
+TizioPippo	awse	Iseo Spain	987654321	iPad	aziendale	opzioncina	2017:11:11	chiusa
+11	1	1	1	1	1	1	1:1:1	1
+AlessandroFinazzi	1234	iseo Serrature	3926481131	Samsung	aziendale	opzione	2018:9:9	Attiva
+AlessandroFinazzi	1234	Iseo Serrature	3351234569	IPhone	aziendale	piano 1	2018:9:9	attiva
+GaiaPerego	123c	Iseo France	3481234567	Samsung	promiscuo	opzione	2018:1:1	attiva
+TizioPippo	awse	Iseo Spain	987654321	iPad	aziendale	opzioncina	2017:11:11	chiusa
+11	1	1	1	1	1	1	1:1:1	1
+AlessandroFinazzi	1234	iseo Serrature	3926481131	Samsung	aziendale	opzione	2018:9:9	Attiva
+AlessandroFinazzi	1234	Iseo Serrature	3351234569	IPhone	aziendale	piano 1	2018:9:9	attiva
+GaiaPerego	123c	Iseo France	3481234567	Samsung	promiscuo	opzione	2018:1:1	attiva
+TizioPippo	awse	Iseo Spain	987654321	iPad	aziendale	opzioncina	2017:11:11	chiusa
+11	1	1	1	1	1	1	1:1:1	1
+AlessandroFinazzi	1234	iseo Serrature	3926481131	Samsung	aziendale	opzione	2018:9:9	Attiva
+AlessandroFinazzi	1234	Iseo Serrature	3351234569	IPhone	aziendale	piano 1	2018:9:9	attiva
+GaiaPerego	123c	Iseo France	3481234567	Samsung	promiscuo	opzione	2018:1:1	attiva
+TizioPippo	awse	Iseo Spain	987654321	iPad	aziendale	opzioncina	2017:11:11	chiusa
+11	1	1	1	1	1	1	1:1:1	1
+AlessandroFinazzi	1234	iseo Serrature	3926481131	Samsung	aziendale	opzione	2018:9:9	Attiva
+AlessandroFinazzi	1234	Iseo Serrature	3351234569	IPhone	aziendale	piano 1	2018:9:9	attiva
+GaiaPerego	123c	Iseo France	3481234567	Samsung	promiscuo	opzione	2018:1:1	attiva
+TizioPippo	awse	Iseo Spain	987654321	iPad	aziendale	opzioncina	2017:11:11	chiusa

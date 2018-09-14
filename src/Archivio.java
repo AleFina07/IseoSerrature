@@ -41,6 +41,7 @@
 		}
 		
 		
+		
 		//Restituisce il partecipante con il codice specificato.
 		//Se il partecipante non è presente nell'elenco viene sollevata una eccezione del tipo EccezionePartecipanteNonPresente
 		public Utente getUtente(long numeroCercato) throws EccezioneUtenteNonPresente
@@ -182,15 +183,6 @@
 		public void stampaSuFile(String nomefile) throws IOException, FileException
 		{
 			String stringaUtente1;
-			String stringaUtente2;
-			String stringaUtente3;
-			String stringaUtente4;
-			String stringaUtente5;
-			String stringaUtente6;
-			String stringaUtente7;
-			String stringaUtente8;
-			String stringaUtente9;
-			String stringaUtente10;
 			
 			Textfile fileUtenti= new Textfile(nomefile, 'W');
 			Utente[] elencoAlfabetico;
@@ -198,32 +190,8 @@
 			for (int i = 0; i < elencoAlfabetico.length; i++) 
 			{
 				
-				stringaUtente1=elencoAlfabetico[i].getNome()+"	"+elencoAlfabetico[i].getCognome()+"	"+elencoAlfabetico[i].getCdc()+"	"+elencoAlfabetico[i].getAzienda()+"	"+elencoAlfabetico[i].getNumTel()+"	"+elencoAlfabetico[i].getDispositivo()+"	"+elencoAlfabetico[i].getTipoDispositivo()+"	"+elencoAlfabetico[i].getOpzContratto()+"	"+elencoAlfabetico[i].getDataAssegnazione()+"	"+elencoAlfabetico[i].getStatoSim();
-				/*stringaUtente2=elencoAlfabetico[i].getCognome();
-				stringaUtente3=elencoAlfabetico[i].getCdc();
-				stringaUtente4=elencoAlfabetico[i].getAzienda();
-				stringaUtente5=elencoAlfabetico[i].toString();
-				stringaUtente6=elencoAlfabetico[i].getDispositivo();
-				stringaUtente7=elencoAlfabetico[i].getTipoDispositivo();
-				stringaUtente8=elencoAlfabetico[i].getOpzContratto();
-				stringaUtente9=elencoAlfabetico[i].getDataAssegnazione();
-				stringaUtente10=elencoAlfabetico[i].getStatoSim();*/
-				
-				
-				
-				
-				//+elencoAlfabetico[i].getCognome()+'\n'+" Telefono:"+elencoAlfabetico[i].getNumTel();
+				stringaUtente1=elencoAlfabetico[i].getNome()+'\r'+elencoAlfabetico[i].getCognome()+"	"+elencoAlfabetico[i].getCdc()+"	"+elencoAlfabetico[i].getAzienda()+"	"+elencoAlfabetico[i].getNumTel()+"	"+elencoAlfabetico[i].getDispositivo()+"	"+elencoAlfabetico[i].getTipoDispositivo()+"	"+elencoAlfabetico[i].getOpzContratto()+"	"+elencoAlfabetico[i].getDataAssegnazione()+"	"+elencoAlfabetico[i].getStatoSim();
 				fileUtenti.tofile(stringaUtente1);
-				/*fileUtenti.tofile(stringaUtente2);
-				fileUtenti.tofile(stringaUtente3);
-				fileUtenti.tofile(stringaUtente4);
-				fileUtenti.tofile(stringaUtente5);
-				fileUtenti.tofile(stringaUtente6);
-				fileUtenti.tofile(stringaUtente7);
-				fileUtenti.tofile(stringaUtente8);
-				fileUtenti.tofile(stringaUtente9);
-				fileUtenti.tofile(stringaUtente10);*/
-				
 			}
 			
 			if (elencoAlfabetico.length==0)

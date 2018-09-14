@@ -21,10 +21,12 @@ public class MainClass implements Serializable
 		
 		finestra.setVisible(true);
 		*/
-		
+		int f = 0;
 		Archivio a1= new Archivio();
+		Archivio a2= new Archivio();
 		//Deserializzazione
 		String nomeFileBinario="Archivio.bin";
+		String incremento= "Incremento.txt";
 		try 
 		{
 			a1=a1.caricaArchivio(nomeFileBinario);
@@ -61,12 +63,13 @@ public class MainClass implements Serializable
 		while (scelta!=0)
 		{
 			scelta=menu1.scelta();
+			
 			switch (scelta) 
 			{
 			case 0:
 				System.out.println("L'applicazione verrà terminata.......ARRIVEDERCI");
 				break;
-				//-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+		//-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 			case 1: //Inserimento nuovo utente
 				//---------------------------------
 				String nome = null;
@@ -289,8 +292,18 @@ public class MainClass implements Serializable
 				
 				break;
 				
+			
 			case 6: //Stampa su file
-				String nomeFile="ElencoUtenti.txt";
+				try 
+				{
+					a2=a2.caricaArchivio(incremento);
+				} 
+				catch (IOException e1) 
+				{
+					System.out.println("Non è possibile caricare i dati dal file "+incremento);
+				}
+					
+				String nomeFile="ElencoUtenti"+(f)+".txt";
 				try 
 				{
 					a1.stampaSuFile(nomeFile);
@@ -300,6 +313,20 @@ public class MainClass implements Serializable
 				{	
 					System.out.println("Impossibile scrivere sul file "+nomeFile);
 				}
+				f++;
+				try 
+				{
+					f=f;
+					a1.salvaArchivio(incremento);  //Serializzazione
+					System.out.println("Serializzazione avvenuta con successo");
+				} 
+				
+				catch (IOException e) 
+				{
+					System.out.println("Non è stato possibile salvare la modifica sul file "+nomeFileBinario);
+				}
+				System.out.println("PREMI QUALSIASI TASTO PER TORNARE AL MENU");
+				
 				break;
 			default:
 				System.out.println("Scelta del menu non valida........riprovare");
