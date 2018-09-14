@@ -33,7 +33,6 @@ public class MainClass implements Serializable
 		{
 			System.out.println("Non è possibile caricare i dati dal file "+nomeFileBinario);
 		}
-		System.out.flush();
 		//creo le voci del menu
 		String[] elencoVociMenu1= {
 				"0---> Esci",
@@ -175,6 +174,7 @@ public class MainClass implements Serializable
 				}
 				System.out.println("PREMI QUALSIASI TASTO PER TORNARE AL MENU");
 				
+		
 				break;
 				
 			//-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
@@ -278,7 +278,7 @@ public class MainClass implements Serializable
 				{
 					System.out.println("**********"+"Utente n. "+(i+1)+"**********");
 					
-					System.out.println(elenco[i].toString()+'\n');
+					System.out.println(elenco[i].getNome()+'\n'+elenco[i].getCognome());
 					
 				}
 				if (elenco.length==0)
@@ -297,7 +297,7 @@ public class MainClass implements Serializable
 					System.out.println("Scrittura sul file "+nomeFile+" avvenuta correttamente.");
 				} 
 				catch (IOException e) 
-				{
+				{	
 					System.out.println("Impossibile scrivere sul file "+nomeFile);
 				}
 				break;

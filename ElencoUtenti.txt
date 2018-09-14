@@ -1,11 +1,105 @@
-Nessun utente presente
-AlessandroFinazzi
- Telefono:3926481131
-GaiaPerego
- Telefono:3481234567
-AlessandroFinazzi
- Telefono:3926481131
-GaiaPerego
- Telefono:3481234567
-TizioPippo
- Telefono:987654321
+Nome ---------------> 1
+Cognome ------------> 1
+Centro costo -------> 1
+Azienda ------------> 1
+Numero Telefono ----> 1
+Dispositivo --------> 1
+Tipo Dispositivo ---> 1
+Opzione contratto --> 1
+Data Assegnazione --> 1:1:1
+Stato SIM ----------> 1
+Nome ---------------> Alessandro
+Cognome ------------> Finazzi
+Centro costo -------> 1234
+Azienda ------------> iseo Serrature
+Numero Telefono ----> 3926481131
+Dispositivo --------> Samsung
+Tipo Dispositivo ---> aziendale
+Opzione contratto --> opzione
+Data Assegnazione --> 2018:9:9
+Stato SIM ----------> Attiva
+Nome ---------------> Alessandro
+Cognome ------------> Finazzi
+Centro costo -------> 1234
+Azienda ------------> Iseo Serrature
+Numero Telefono ----> 3351234569
+Dispositivo --------> IPhone
+Tipo Dispositivo ---> aziendale
+Opzione contratto --> piano 1
+Data Assegnazione --> 2018:9:9
+Stato SIM ----------> attiva
+Nome ---------------> Gaia
+Cognome ------------> Perego
+Centro costo -------> 123c
+Azienda ------------> Iseo France
+Numero Telefono ----> 3481234567
+Dispositivo --------> Samsung
+Tipo Dispositivo ---> promiscuo
+Opzione contratto --> opzione
+Data Assegnazione --> 2018:1:1
+Stato SIM ----------> attiva
+Nome ---------------> Tizio
+Cognome ------------> Pippo
+Centro costo -------> awse
+Azienda ------------> Iseo Spain
+Numero Telefono ----> 987654321
+Dispositivo --------> iPad
+Tipo Dispositivo ---> aziendale
+Opzione contratto --> opzioncina
+Data Assegnazione --> 2017:11:11
+Stato SIM ----------> chiusa
+1
+1
+1
+1
+1
+1
+1
+1
+1:1:1
+1
+Alessandro
+Finazzi
+1234
+iseo Serrature
+3926481131
+Samsung
+aziendale
+opzione
+2018:9:9
+Attiva
+Alessandro
+Finazzi
+1234
+Iseo Serrature
+3351234569
+IPhone
+aziendale
+piano 1
+2018:9:9
+attiva
+Gaia
+Perego
+123c
+Iseo France
+3481234567
+Samsung
+promiscuo
+opzione
+2018:1:1
+attiva
+Tizio
+Pippo
+awse
+Iseo Spain
+987654321
+iPad
+aziendale
+opzioncina
+2017:11:11
+chiusa
+1	1	1	1	1	1	1	1	1:1:1	1
+Alessandro	Finazzi	1234	iseo Serrature	3926481131	Samsung	aziendale	opzione	2018:9:9	Attiva
+Alessandro	Finazzi	1234	Iseo Serrature	3351234569	IPhone	aziendale	piano 1	2018:9:9	attiva
+Gaia	Perego	123c	Iseo France	3481234567	Samsung	promiscuo	opzione	2018:1:1	attiva
+Tizio	Pippo	awse	Iseo Spain	987654321	iPad	aziendale	opzioncina	2017:11:11	chiusa

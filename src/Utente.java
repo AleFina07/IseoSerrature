@@ -175,9 +175,11 @@ public class Utente implements Serializable
 		this.giorno = giorno;
 	}
 	public String toString()
-	{
+	{		
 		return ("Nome ---------------> "+getNome()+'\n'+ "Cognome ------------> "+ getCognome()+'\n'+"Centro costo -------> "+getCdc()+'\n'+"Azienda ------------> "+getAzienda()+'\n'+ "Numero Telefono ----> "+getNumTel()+'\n'+"Dispositivo --------> "+ getDispositivo()+  '\n' +"Tipo Dispositivo ---> "+getTipoDispositivo()+'\n'+"Opzione contratto --> "+getOpzContratto()+'\n'+"Data Assegnazione --> "+getDataAssegnazione()+'\n'+"Stato SIM ----------> "+getStatoSim());
 	}
+	
+	
 
 	public String getTipoDispositivo() {
 		return tipoDispositivo;
